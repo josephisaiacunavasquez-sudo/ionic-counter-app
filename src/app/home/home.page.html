@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Contador Ionic</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Contador Ionic</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="counter-container">
+    <div class="counter-display">
+      <ion-badge class="counter-badge" color="danger">
+        {{ count }}
+      </ion-badge>
+    </div>
+
+    <p class="counter-label">Contador Actual</p>
+
+    <div class="button-group">
+      <ion-button (click)="decrement()" color="danger" size="large" expand="block">
+        <ion-icon name="remove-circle"></ion-icon>
+        Restar
+      </ion-button>
+
+      <ion-button (click)="reset()" color="warning" size="large" expand="block">
+        <ion-icon name="refresh-circle"></ion-icon>
+        Reiniciar
+      </ion-button>
+
+      <ion-button (click)="increment()" color="success" size="large" expand="block">
+        <ion-icon name="add-circle"></ion-icon>
+        Sumar
+      </ion-button>
+    </div>
+
+    <div class="info-section">
+      <p *ngIf="count > 0" class="info-text positive">✓ Contador en positivo</p>
+      <p *ngIf="count < 0" class="info-text negative">✗ Contador en negativo</p>
+      <p *ngIf="count === 0" class="info-text neutral">● Contador en cero</p>
+    </div>
+  </div>
+</ion-content>
